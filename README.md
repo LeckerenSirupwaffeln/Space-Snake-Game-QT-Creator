@@ -9,5 +9,5 @@ Features:
 - 7 different planets to eat and grow your space snake!
 - Custom snake body parts for turns.
 - Ability to pause at any time.
-- Change speed to your preference to increase or decrease the difficulty. 
+- Option to change speed to your preference to either increase or decrease the difficulty. 
   
