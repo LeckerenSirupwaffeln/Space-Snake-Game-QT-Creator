@@ -5,9 +5,10 @@ Features:
 - Customizable options with automatic saving and loading. 
 - High score tracking. 
 - Animated background.
-- 20 soundtracks that immerse the player into space, with toggle ability and control over volume. 
+- 20 soundtracks that immerse the player into space, with full control over volume and ability to toggle on and off. 
 - 7 different planets to eat and grow your space snake!
 - Custom snake body parts for turns.
 - Ability to pause at any time.
-- Change speed to your preference to increase or decrease the difficulty. 
+- Option to change speed to your preference to either increase or decrease the difficulty. 
   
+  **Note: Unsupported on Windows until QT 6.2 brings multimedia to Windows.**
