@@ -28,6 +28,6 @@ Features:
 QT += core gui  
 QT += multimedia
 
-  **Note: Music only works if you drop the music folder next to the .exe build. This is because QT can't handle the size of these music files in it's native resource pack feature.** 
+  **Note: Music only works if you drop the music folder next to the .exe build. This is because QT can't handle the size of these music files in its native resource pack feature.** 
   
   
