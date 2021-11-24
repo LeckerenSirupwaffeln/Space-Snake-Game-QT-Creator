@@ -11,3 +11,4 @@ Features:
 - Ability to pause at any time.
 - Option to change speed to your preference to either increase or decrease the difficulty. 
   
+  Note: Unsupported on Windows until QT 6.2 brings multimedia to Windows. 
