@@ -5,7 +5,7 @@ Features:
 - Customizable options with automatic saving and loading. 
 - High score tracking. 
 - Animated background.
-- 20 soundtracks that immerse the player into space, with toggle ability and control over volume. 
+- 20 soundtracks that immerse the player into space, with full control over volume and ability to toggle on and off. 
 - 7 different planets to eat and grow your space snake!
 - Custom snake body parts for turns.
 - Ability to pause at any time.
