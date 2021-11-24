@@ -11,6 +11,23 @@ Features:
 - Ability to pause at any time.
 - Option to change speed to your preference to either increase or decrease the difficulty. 
   
+  
+  Main Menu:  
+  ![Main Menu](https://github.com/LeckerenSirupwaffeln/Space-Snake-Game-QT-Creator/blob/main/startmenu.gif?raw=true)
+  
+  Game:  
+  ![Game](https://github.com/LeckerenSirupwaffeln/Space-Snake-Game-QT-Creator/blob/main/game.gif?raw=true)
+  
+  
+  
+  
+  
+  
+  
   **Note: Windows only supported on QT 6.2 as of 24/11/2021. If you're using Windows then make sure the included QT plugins are available on your QT Windows installation. These are:**  
 QT += core gui  
 QT += multimedia
+
+  **Note: Music only works if you drop the music folder next to the .exe build. This is because QT can't handle the size of these music files in it's native resource pack feature.** 
+  
+  
