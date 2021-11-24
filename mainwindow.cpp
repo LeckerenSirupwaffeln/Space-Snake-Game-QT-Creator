@@ -1,16 +1,17 @@
 #include "mainwindow.h"
 #include <QCoreApplication>
+#include <QApplication>
 #include <QMovie>
-#include <QMediaPlayer>
-#include <QMediaPlaylist>
 #include <QDateTime>
 #include <QRandomGenerator>
 #include <QSlider>
 #include <QTimer>
 #include <QIcon>
 #include <QString>
-#include <QSound>
+#include <QSoundEffect>
 #include <QFile>
+#include <QMediaPlayer>
+#include <QAudioOutput>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -156,20 +157,22 @@ void MainWindow::InitGameTimer()
 void MainWindow::InitMediaPlayer()
 {
     QRandomGenerator prng1(QDateTime::currentMSecsSinceEpoch() / 1000); //Seed to make sure starting song is RNG
-    player = new QMediaPlayer;
-    playlist = new QMediaPlaylist(player);
+    music_list = QVector<QUrl>(20);
+    media_player = new QMediaPlayer;
+    audio_output = new QAudioOutput;
+    media_player->setAudioOutput(audio_output);
 
     for(int i=0; i<20; i++)
     {
-        QString tmpString = QString(MUSIC_DIR) + "music" + QString::number(i) + ".mp3";
-        playlist->addMedia(QUrl::fromLocalFile(tmpString));
+        QString tmpString = QApplication::applicationDirPath() + QString(MUSIC_DIR) + "music" + QString::number(i) + ".mp3";
+        music_list[i] = QUrl::fromLocalFile(tmpString);
     }
 
-    player->setMedia(playlist);
-    playlist->setPlaybackMode(QMediaPlaylist::Random); //Make playthrough random
-    playlist->setCurrentIndex(prng1.generate() % 20); //Make starting song random
-    player->setVolume(volume);
-    player->play();
+    media_player->setSource(music_list[prng1.generate() % 20]);
+    audio_output->setVolume(volume);
+    media_player->setLoops(1);
+    media_player->play();
+    connect(media_player, &QMediaPlayer::loopsChanged, this, &MainWindow::RandomizeSoundEffect);
 }
 
 void MainWindow::InitMainMenuWidget()
@@ -233,7 +236,7 @@ void MainWindow::InitOptionsWidget()
     volumeSlider->setValue(volume);
     volumeSlider->setMinimum(0);
     volumeSlider->setMaximum(100);
-    connect(volumeSlider, &QAbstractSlider::valueChanged, this, [this](int value) { volume = value; player->setVolume(volume); AppDebug("Volume changed");});
+    connect(volumeSlider, &QAbstractSlider::valueChanged, this, [this](int value) { volume = value; audio_output->setVolume(volume); AppDebug("Volume changed");});
     connect(volumeSlider, &QAbstractSlider::sliderReleased, this, &MainWindow::SaveData);
 
     gamespeedSlider = new QSlider(Qt::Horizontal, this->optionsWidget);
@@ -397,7 +400,7 @@ void MainWindow::SaveData()
     QTextStream outStream(&outputFile);
     for(int i=0; i<dataPointerVector.size(); i++)
     {
-        outStream << *dataPointerVector[i] << endl;
+        outStream << *dataPointerVector[i] << "\n";
     }
 
     outputFile.close();
@@ -432,7 +435,7 @@ int MainWindow::LoadData()
 void MainWindow::AppDebug(QString str)
 {
     consoleText->append(str);
-    *logStream << str << endl;
+    *logStream << str << "\n";
 }
 
 void MainWindow::pressed_startgame()
@@ -462,7 +465,7 @@ void MainWindow::pressed_musictoggle()
     if(music_on)
     {
         button_musictoggle->setIcon(QIcon(":/icons/music_off.png"));
-        player->pause();
+        media_player->stop();
         music_on = false;
         AppDebug("pressed_musictroggle() called");
     }
@@ -470,7 +473,7 @@ void MainWindow::pressed_musictoggle()
     else
     {
         button_musictoggle->setIcon(QIcon(":/icons/music_on.png"));
-        player->play();
+        media_player->play();
         music_on = true;
         AppDebug("pressed_musictroggle() called");
     }
@@ -815,6 +818,20 @@ void MainWindow::Game_Over()
     gameTimer->stop();
     stackedWidget->setCurrentIndex(MENU_INDEX);
     AppDebug("Game_Over() called");
+}
+
+void MainWindow::RandomizeSoundEffect()
+{
+    if (!media_player->loops())
+    {
+        QRandomGenerator prng1(QDateTime::currentMSecsSinceEpoch() / 1000);
+        media_player->setSource(music_list[prng1.generate() % 20]);
+        media_player->setLoops(1);
+        if(music_on)
+        {
+            media_player->play();
+        }
+    }
 }
 
 

@@ -8,7 +8,7 @@ enum {EMPTY, SNAKE, PLANET};
 
 #define CURRENT_VERSION "alpha 1.0"
 
-#define MUSIC_DIR "/home/js/Documents/QtBuild/SnakeGame/music/"
+#define MUSIC_DIR "/music/"
 
 #define NUM_PLANETS 8
 #define BOARD_LENGTH 8
@@ -49,12 +49,13 @@ enum {EMPTY, SNAKE, PLANET};
 #include <QVBoxLayout>
 #include <QKeyEvent>
 #include <QMediaPlayer>
-#include <QMediaPlaylist>
+#include <QAudioOutput>
 #include <QSlider>
 #include <QString>
 #include <QVector>
 #include <QFile>
 #include <QTextEdit>
+
 
 namespace Ui { class MainWindow; }
 
@@ -145,8 +146,9 @@ private:
    bool terminal_on;
 
    //Audio
-   QMediaPlayer* player;
-   QMediaPlaylist* playlist;
+   QMediaPlayer* media_player;
+   QAudioOutput* audio_output;
+   QVector<QUrl> music_list;
 
    int volume;
    bool music_on;
@@ -203,6 +205,8 @@ private:
    void Game_GrowSnake();
    void Game_SnakeRevisualize();
    void Game_Over();
+
+   void RandomizeSoundEffect();
 
 
 };
