@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/background.gif</file>
+        <file>images/options.jpg</file>
+        <file>images/game_background.gif</file>
+        <file>icons/music_on.png</file>
+        <file>icons/terminal_off.png</file>
+        <file>icons/terminal_on.png</file>
+        <file>icons/music_off.png</file>
+        <file>game/planet0.png</file>
+        <file>game/planet1.png</file>
+        <file>game/planet2.png</file>
+        <file>game/planet3.png</file>
+        <file>game/planet4.png</file>
+        <file>game/planet5.png</file>
+        <file>game/planet6.png</file>
+        <file>game/planet7.png</file>
+        <file>game/snake_body_horizontal.png</file>
+        <file>game/snake_body_vertical.png</file>
+        <file>game/snake_head_down.png</file>
+        <file>game/snake_head_left.png</file>
+        <file>game/snake_head_right.png</file>
+        <file>game/snake_head_up.png</file>
+        <file>game/snake_tail_down.png</file>
+        <file>game/snake_tail_left.png</file>
+        <file>game/snake_tail_right.png</file>
+        <file>game/snake_tail_up.png</file>
+        <file>game/snake_turn_left_down.png</file>
+        <file>game/snake_turn_left_up.png</file>
+        <file>game/snake_turn_right_down.png</file>
+        <file>game/snake_turn_right_up.png</file>
+        <file>icons/restart.png</file>
+        <file>icons/play.png</file>
+        <file>icons/pause.png</file>
+    </qresource>
+</RCC>
