@@ -12,10 +12,10 @@ Features:
 - Option to change speed to your preference to either increase or decrease the difficulty. 
   
   
-  Main Menu:  
+  # Main Menu:  
   ![Main Menu](https://github.com/LeckerenSirupwaffeln/Space-Snake-Game-QT-Creator/blob/main/startmenu.gif?raw=true)
   
-  Game:  
+  # Game:  
   ![Game](https://github.com/LeckerenSirupwaffeln/Space-Snake-Game-QT-Creator/blob/main/game.gif?raw=true)
   
   
