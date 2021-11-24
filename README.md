@@ -11,6 +11,6 @@ Features:
 - Ability to pause at any time.
 - Option to change speed to your preference to either increase or decrease the difficulty. 
   
-  **Note: Windows only supported on QT 6.2 as of 24/11/2021. If you're using Windows then make sure the included QT plugins are available on your QT Windows installation. These are:**
+  **Note: Windows only supported on QT 6.2 as of 24/11/2021. If you're using Windows then make sure the included QT plugins are available on your QT Windows installation. These are:**  
 QT += core gui  
 QT += multimedia
