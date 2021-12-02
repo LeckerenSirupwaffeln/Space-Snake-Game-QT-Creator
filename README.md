@@ -2,14 +2,15 @@
 Space snake game that I made myself in QT Creator using C++ and HTML/CSS.
 Features:
 - Toggleable console.
-- Customizable options with automatic saving and loading. 
+- Customizable options with automatic saving and loading to/from a local savefile. 
 - High score tracking. 
 - Animated background.
 - 20 soundtracks that immerse the player into space, with full control over volume and ability to toggle on and off. 
 - 7 different planets to eat and grow your space snake!
-- Custom snake body parts for turns.
+- Custom snake body parts when the snake is in a turn.
 - Ability to pause at any time.
-- Option to change speed to your preference to either increase or decrease the difficulty. 
+- Option to change speed to your preference to either increase or decrease the difficulty.
+- Stylish GUI 
   
   
   # Main Menu:  
@@ -28,6 +29,6 @@ Features:
 QT += core gui  
 QT += multimedia
 
-  **Note: Music only works if you drop the music folder next to the .exe build. This is because QT can't handle the size of these music files in its native resource pack feature.** 
+  **Note: Music only works if you drop the music folder next to the .exe build. This is because QT can't handle the size of these music files in its native resource pack feature, so the music has to be loaded locally by the .exe** 
   
   
