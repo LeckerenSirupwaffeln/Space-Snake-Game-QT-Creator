@@ -24,9 +24,7 @@ Features:
   
   
    
-  **Note: Windows only supported on QT 6.2 as of 24/11/2021. If you're using Windows then make sure the included QT plugins are available on your QT Windows installation. These are:**  
-QT += core gui  
-QT += multimedia
+  **Note: Windows only supported on QT 6.2 as of 24/11/2021.
 
   **Note: Music only works if you drop the music folder next to the .exe build. This is because QT can't handle the size of these music files in its native resource pack feature, so the music has to be loaded locally by the .exe** 
   
