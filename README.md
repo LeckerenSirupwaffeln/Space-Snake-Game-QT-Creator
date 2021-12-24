@@ -1,5 +1,5 @@
 # Space-Snake-Game-QT-Creator
-Space snake game that I made myself in QT Creator using C++ and HTML/CSS.
+Space snake game made in QT Creator using C++ and some HTML/CSS.
 Features:
 - Toggleable console.
 - Customizable options with automatic saving and loading to/from a local savefile. 
